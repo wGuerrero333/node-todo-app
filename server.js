@@ -1,4 +1,6 @@
 /* eslint-disable no-console */
+
+// este dotenv permite crear variables de entorno para que la aplicacion sea escalable
 require('dotenv').config();
 
 const express = require('express');
@@ -8,8 +10,10 @@ const favicon = require('serve-favicon');
 
 // environment variables
 // require('dotenv').config();
-const dbUrl = process.env.DB_URL;
-const port = process.env.PORT;
+// Aqui le agrege mi ruta de mongo DEBO revisar las variables de entorno
+const mongoUrl = "mongosh 'mongodb+srv://cluster0.evmb7.mongodb.net/myFirstDatabase' --username wguerreroc333"
+const dbUrl = process.env.DB_URL || mongoUrl ;
+const port = process.env.PORT || 3000;
 
 // create express app
 const app = express();
